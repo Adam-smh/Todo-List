@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+#pg1, #pg2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #F1FAEE;
+
+}
+
+.Title{
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: #A8DADC;
+
+    font-size: 30px;
+
+    border:none;
+    border-bottom: black;
+    border-width: 1px;
+    border-radius: 10px;
+
+}
+
+body{
+
+    overflow: hidden;
+
+    scroll-behavior: smooth;
+}
+
+
+li{
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+
+    list-style-type: none;
+
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+
+}
+
+button{
+    font-family: 'Roboto', sans-serif;
+
+    background: #E63946;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 20px;
+    color: #F1FAEE;
+
+}
+
