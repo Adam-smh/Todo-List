@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from 'model/item';
 
 @Component({
   selector: 'app-todo',
@@ -6,14 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
+  public todoItem: string = "";
+  public todoItems: Item[] = []; // focus
+  // public todoitemId: number[] = [];
 
-  title!: string;
-
-  todoItem!: string;
-  todoItems: Array<string> = []; // focus
-
-  todoItem2!: string;
-  todoItems2: Array<string> = []; // focus
+  public itemList: string = "";
+  public itemListA: Item[] = [];
 
   constructor() {
   }
@@ -22,14 +21,19 @@ export class TodoComponent implements OnInit {
   }
 
   updateList() { // needs to be enhanced
+    var newItem = new Item(this.todoItem, "");
+    this.itemListA.push(newItem);
 
-    this.todoItems.push(this.todoItem);
     this.todoItem = '';
   }
 
-  updateList2() { // needs to be enhanced
+  addSubItem(index: any){
+    debugger
+    // this.itemListA[index].subItem.push(this.itemList);
+  }
 
-    this.todoItems2.push(this.todoItem2);
-    this.todoItem2 = '';
+  delete(){
+    this.todoItem
   }
 }
+
