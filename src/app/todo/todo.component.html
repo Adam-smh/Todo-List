@@ -1,50 +1,30 @@
 <div id="pg1">
     <section class="fOrm" (keyup.enter)="updateList()">
 
-        <input class="Title" type="text" placeholder="Enter To Do List Name! ">
+        <h2 class="Title">Create Your Todo List</h2>
         <input class="taskIn" [(ngModel)]="todoItem" type="text" placeholder="Enter tasks here!" required>
         <button class="save" (click)="updateList()">Save</button>
+        <button class="save" (click)="deleteAll()">Clear</button>
         
     </section>
     <!-- table maybe???? -->
     <ul class="list">
         
-        <li *ngFor="let item of todoItems">
+        <li *ngFor="let items of todoItems">
             <input type="checkbox" name="tick" id="">
-            {{item}}
+            {{items}}
         </li>
 
     </ul>
-    <!-- <a  href="#pg2">
-        <button class="next down">
-            next list
-        </button>
-    </a> -->
-</div>
 
-
-<div id="pg2">
-    <!-- <a  href="#pg1">
-        <button class="next up">
-            Previous list
-        </button>
-    </a> -->
-
-    <section class="fOrm2" id="f" (keyup.enter)="updateList2()">
-
-        <input class="Title" type="text" placeholder="Enter To Do List Name! ">
-        <input class="taskIn" [(ngModel)]="todoItem2" type="text" placeholder="Enter tasks here!" required>
-        <button class="save" (click)="updateList2()">Save</button>
-    
-    </section>
-<!-- table maybe???? -->
-    <ul class="list">
-
-        <li *ngFor="let item2 of todoItems2">
-            <input type="checkbox" name="tick" id="">
-            {{item2}}
-        </li>
-
-    </ul>
+    <div *ngFor="let item of itemListA; let i = index">
+        <p>{{item.title}}</p>
+        <input type="text" class="form-control" placeholder="add" [(ngModel)]="itemList">
+        <button (click)="addSubItem(i)">add</button>
+        <div *ngFor="let sub of item.subItem">
+            <p>{{sub}}</p>
+        </div>
+        
+    </div>
 
 </div>
