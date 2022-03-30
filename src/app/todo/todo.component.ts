@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'model/item';
+// import { title } from 'process';
 
 @Component({
   selector: 'app-todo',
@@ -11,6 +12,7 @@ export class TodoComponent implements OnInit {
   public todoItems: Item[] = []; // focus
   // public todoitemId: number[] = [];
 
+  // public index = 0;
   public itemList: string = "";
   public itemListA: Item[] = [];
 
@@ -21,19 +23,29 @@ export class TodoComponent implements OnInit {
   }
 
   updateList() { // needs to be enhanced
-    var newItem = new Item(this.todoItem, "");
+    var newItem = new Item(this.todoItem, []);
     this.itemListA.push(newItem);
 
-    this.todoItem = '';
+    this.todoItem = "";
   }
 
   addSubItem(index: any){
-    debugger
-    // this.itemListA[index].subItem.push(this.itemList);
+    this.itemListA[index++].subItem.push(this.itemList);
   }
 
-  delete(){
-    this.todoItem
+  deleteAll(){
+    this.itemListA = [];
+
+
+    // var delItem = new Item(this.todoItems, []);
+    // this.todoItems.push(delItem)
+   
+    // delete this.todoItems[this.index];
+
+    // const index = this.todoItems.indexOf(this.index, 0);
+    // if (index > -1) {
+    //   this.todoItems.splice(index, 1);
+    // }
   }
 }
 

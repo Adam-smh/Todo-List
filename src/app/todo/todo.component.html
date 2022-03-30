@@ -1,9 +1,10 @@
 <div id="pg1">
     <section class="fOrm" (keyup.enter)="updateList()">
 
-        <input class="Title" type="text" placeholder="Enter To Do List Name! ">
+        <h2 class="Title">Create Your Todo List</h2>
         <input class="taskIn" [(ngModel)]="todoItem" type="text" placeholder="Enter tasks here!" required>
         <button class="save" (click)="updateList()">Save</button>
+        <button class="save" (click)="deleteAll()">Clear</button>
         
     </section>
     <!-- table maybe???? -->
